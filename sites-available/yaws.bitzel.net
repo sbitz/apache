@@ -1,0 +1,15 @@
+#
+# Example: yaws.bitzel.net (/etc/apache2/sites-available/yaws.bitzel.net)
+#
+<VirtualHost yaws.bitzel.net:80>
+	ProxyPass / http://yaws.bitzel.net:8080/
+	ServerName yaws.bitzel.net
+	ErrorLog /home/www/yaws.bitzel.net/error.log
+	TransferLog /home/www/yaws.bitzel.net/access.log
+</VirtualHost>
+<VirtualHost yaws.bitzel.net:443>
+	ProxyPass / https://yaws.bitzel.net:8443/
+        ServerName yaws.bitzel.net
+	ErrorLog /home/www/yaws.bitzel.net/error.log
+	TransferLog /home/www/yaws.bitzel.net/access.log
+</VirtualHost>
